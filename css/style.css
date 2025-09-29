@@ -61,6 +61,23 @@ nav {
 
 }
 
+.main {
+    position: relative;
+}
+
+.main::before {
+    top: 0px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg.svg');
+    background-size: cover;
+    z-index: -1;
+    opacity: 70%;
+}
+
+
 .button:hover {
     background-color: #898cc4;
 }
@@ -207,6 +224,7 @@ nav {
 
 .page-item {
     color: #50589C;
+    background-color: white;
 }
 
 .page-link {
@@ -238,4 +256,24 @@ nav {
 .page-link-arrow {
     background-color: #8a94e4;
     color: #f0f0f0;
+    border: 0.125rem solid #8a94e4;
+
+}
+
+.footer {
+    background-color: #50589C;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 5rem;
+
+}
+
+.footer h2 {
+    color: #f0f0f0;
+}
+
+.footer p {
+    color: #bfc2f1;
+    max-width: 20rem;
+    font-size: 1.2rem;
 }

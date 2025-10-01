@@ -3,7 +3,16 @@
 require __DIR__ . '\..\includes\functions.inc.php';
 require __DIR__ . '\..\includes\db-connect.inc.php';
 
-
+if (!empty($_POST)) {
+    $title = (string) ($_POST['title'] ?? '');
+    $date = (string) ($_POST['date'] ?? '');
+    $message = (string)($_POST['message'] ?? '');
+    $stmt=$pdo->prepare('INSERT INTO  `notes` (`title`, `date`, `message`) VALUES (:title, :date, :message)');
+    $stmt->bindValue(':title', $title);
+    $stmt->bindValue(':date', $date);
+    $stmt->bindValue(':message', $message);
+    $stmt->execute();
+}
 ?>
 <?php require __DIR__ . '\..\includes\header.inc.php' ?>
 <main class="main">
